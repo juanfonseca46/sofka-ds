@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import {
   LayoutDashboard, Palette, Square, Type, Tag,
-  CreditCard, AlignJustify, ChevronRight, Sun, Moon,
+  CreditCard, AlignJustify, ChevronRight, Sun, Moon, Smartphone,
 } from "lucide-react";
 
 import { OverviewPage }    from "./pages/OverviewPage";
@@ -11,6 +11,7 @@ import { InputPage }       from "./pages/InputPage";
 import { BadgePage }       from "./pages/BadgePage";
 import { ProductCardPage } from "./pages/ProductCardPage";
 import { TopbarPage }      from "./pages/TopbarPage";
+import { CaseStudyPage }  from "./pages/CaseStudyPage";
 
 type Page =
   | "overview"
@@ -19,7 +20,8 @@ type Page =
   | "input"
   | "badge"
   | "product-card"
-  | "topbar";
+  | "topbar"
+  | "case-study";
 
 interface NavItem {
   id: Page;
@@ -38,6 +40,10 @@ const componentItems: NavItem[] = [
   { id: "badge",        label: "Badge",        icon: <Tag size={15} /> },
   { id: "product-card", label: "Product Card", icon: <CreditCard size={15} /> },
   { id: "topbar",       label: "Topbar",       icon: <AlignJustify size={15} /> },
+];
+
+const caseItems: NavItem[] = [
+  { id: "case-study", label: "App Home", icon: <Smartphone size={15} /> },
 ];
 
 export default function App() {
@@ -112,6 +118,23 @@ export default function App() {
               </button>
             ))}
           </div>
+
+          <div className="sidebar-group">
+            <p className="sidebar-group-label">Case Study</p>
+            {caseItems.map((item) => (
+              <button
+                key={item.id}
+                className={`sidebar-link${page === item.id ? " active" : ""}`}
+                onClick={() => setPage(item.id)}
+              >
+                {item.icon}
+                {item.label}
+                {page === item.id && (
+                  <ChevronRight size={12} style={{ marginLeft: "auto", opacity: 0.6 }} />
+                )}
+              </button>
+            ))}
+          </div>
         </nav>
 
         {/* Footer — toggle + tech stack */}
@@ -155,6 +178,7 @@ export default function App() {
         {page === "input"        && <InputPage />}
         {page === "badge"        && <BadgePage />}
         {page === "product-card" && <ProductCardPage />}
+        {page === "case-study"   && <CaseStudyPage />}
         {page === "topbar"       && <TopbarPage />}
       </main>
     </div>
