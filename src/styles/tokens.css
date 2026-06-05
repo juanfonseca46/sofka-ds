@@ -1,0 +1,217 @@
+/* ============================================================
+   SOFKA DESIGN SYSTEM — TOKEN DEFINITIONS v1.0
+   ============================================================
+   Estructura de tres capas:
+   1. Primitivos   → valores base sin semántica
+   2. Semánticos   → alias con intención de uso
+   3. Componentes  → tokens específicos por componente
+   ============================================================ */
+
+:root {
+
+  /* ----------------------------------------------------------
+     CAPA 1: PRIMITIVOS
+     Paleta base de colores. No usar directamente en componentes.
+     ---------------------------------------------------------- */
+
+  /* Azul */
+  --sk-blue-50:  #EFF6FF;
+  --sk-blue-100: #DBEAFE;
+  --sk-blue-200: #BFDBFE;
+  --sk-blue-300: #93C5FD;
+  --sk-blue-500: #3082F6;
+  --sk-blue-600: #1a6de0;
+  --sk-blue-700: #1559c7;
+
+  /* Rojo */
+  --sk-red-50:  #FFF5F5;
+  --sk-red-100: #FEE2E2;
+  --sk-red-300: #FCA5A5;
+  --sk-red-400: #F87171;
+  --sk-red-500: #EF4444;
+  --sk-red-600: #F55E5E;
+
+  /* Amarillo / Warning */
+  --sk-yellow-100: #FEF9C3;
+  --sk-yellow-300: #FDE047;
+  --sk-yellow-600: #CA8A04;
+
+  /* Grises */
+  --sk-gray-50:  #F9FAFB;
+  --sk-gray-100: #F3F4F6;
+  --sk-gray-200: #E5E7EB;
+  --sk-gray-300: #D1D5DB;
+  --sk-gray-400: #9CA3AF;
+  --sk-gray-500: #6B7280;
+  --sk-gray-600: #4B5563;
+  --sk-gray-700: #374151;
+  --sk-gray-800: #1F2937;
+  --sk-gray-900: #111827;
+
+  /* Neutros absolutos */
+  --sk-white:    #FFFFFF;
+  --sk-black:    #000000;
+  --sk-ink:      #424242;
+
+
+  /* ----------------------------------------------------------
+     CAPA 2: SEMÁNTICOS
+     Alias con intención. Estos son los tokens que usan los componentes.
+     ---------------------------------------------------------- */
+
+  /* Brand / Acción principal */
+  --sk-color-brand:          var(--sk-blue-500);
+  --sk-color-brand-hover:    var(--sk-blue-600);
+  --sk-color-brand-active:   var(--sk-blue-700);
+  --sk-color-brand-subtle:   var(--sk-blue-300);
+  --sk-color-brand-muted:    var(--sk-blue-200);
+  --sk-color-brand-bg:       var(--sk-blue-50);
+
+  /* Danger / Destructivo */
+  --sk-color-danger:         var(--sk-red-400);
+  --sk-color-danger-hover:   var(--sk-red-600);
+  --sk-color-danger-active:  var(--sk-red-500);
+  --sk-color-danger-muted:   var(--sk-red-300);
+  --sk-color-danger-bg:      var(--sk-red-100);
+
+  /* Warning */
+  --sk-color-warning-bg:     var(--sk-yellow-100);
+  --sk-color-warning-text:   var(--sk-yellow-600);
+  --sk-color-warning-border: var(--sk-yellow-300);
+
+  /* Texto */
+  --sk-color-text-primary:   var(--sk-gray-900);
+  --sk-color-text-body:      var(--sk-gray-700);
+  --sk-color-text-secondary: var(--sk-gray-500);
+  --sk-color-text-disabled:  var(--sk-gray-400);
+  --sk-color-text-label:     var(--sk-ink);
+  --sk-color-text-on-brand:  var(--sk-white);
+
+  /* Superficies */
+  --sk-color-surface:        var(--sk-white);
+  --sk-color-surface-muted:  var(--sk-gray-50);
+  --sk-color-surface-subtle: var(--sk-gray-100);
+
+  /* Bordes */
+  --sk-color-border:             var(--sk-gray-300);
+  --sk-color-border-light:       var(--sk-gray-200);
+  --sk-color-border-focus-brand: var(--sk-blue-500);
+  --sk-color-border-focus-danger:var(--sk-red-400);
+
+
+  /* ----------------------------------------------------------
+     TIPOGRAFÍA
+     ---------------------------------------------------------- */
+  --sk-font-family:        'Poppins', sans-serif;
+  --sk-font-mono:          'JetBrains Mono', monospace;
+
+  --sk-font-size-xs:       11px;
+  --sk-font-size-sm:       12px;
+  --sk-font-size-md:       13px;
+  --sk-font-size-base:     14px;
+  --sk-font-size-lg:       16px;
+  --sk-font-size-xl:       20px;
+  --sk-font-size-2xl:      24px;
+  --sk-font-size-3xl:      32px;
+
+  --sk-font-weight-normal:   400;
+  --sk-font-weight-medium:   500;
+  --sk-font-weight-semibold: 600;
+  --sk-font-weight-bold:     700;
+
+  --sk-line-height-tight:  1.25;
+  --sk-line-height-normal: 1.5;
+  --sk-line-height-relaxed:1.75;
+
+
+  /* ----------------------------------------------------------
+     ESPACIADO
+     Base 4px (t-shirt sizes)
+     ---------------------------------------------------------- */
+  --sk-space-1:  4px;
+  --sk-space-2:  8px;
+  --sk-space-3:  12px;
+  --sk-space-4:  16px;
+  --sk-space-5:  20px;
+  --sk-space-6:  24px;
+  --sk-space-8:  32px;
+  --sk-space-10: 40px;
+  --sk-space-12: 48px;
+  --sk-space-16: 64px;
+
+
+  /* ----------------------------------------------------------
+     BORDES Y RADIOS
+     ---------------------------------------------------------- */
+  --sk-radius-sm:   6px;
+  --sk-radius-md:   8px;
+  --sk-radius-lg:   12px;
+  --sk-radius-xl:   16px;
+  --sk-radius-full: 9999px;
+
+
+  /* ----------------------------------------------------------
+     SOMBRAS
+     ---------------------------------------------------------- */
+  --sk-shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.05);
+  --sk-shadow-md:  0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                   0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --sk-shadow-lg:  0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                   0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --sk-shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+
+  /* ----------------------------------------------------------
+     CAPA 3: COMPONENTES
+     Tokens específicos por componente.
+     ---------------------------------------------------------- */
+
+  /* Button */
+  --sk-btn-height-md:       40px;
+  --sk-btn-height-sm:       32px;
+  --sk-btn-height-icon:     40px;
+  --sk-btn-width-icon:      40px;
+  --sk-btn-padding-x-md:    var(--sk-space-4);
+  --sk-btn-padding-x-sm:    var(--sk-space-3);
+  --sk-btn-radius:          var(--sk-radius-md);
+  --sk-btn-font-size-md:    var(--sk-font-size-base);
+  --sk-btn-font-size-sm:    var(--sk-font-size-sm);
+  --sk-btn-font-weight:     var(--sk-font-weight-semibold);
+  --sk-btn-gap:             var(--sk-space-2);
+  --sk-btn-transition:      background-color 150ms ease, opacity 150ms ease;
+
+  /* Input */
+  --sk-input-height:        40px;
+  --sk-input-padding-x:     var(--sk-space-3);
+  --sk-input-radius:        var(--sk-radius-md);
+  --sk-input-font-size:     var(--sk-font-size-md);
+  --sk-input-label-size:    var(--sk-font-size-sm);
+  --sk-input-helper-size:   var(--sk-font-size-xs);
+  --sk-input-label-weight:  var(--sk-font-weight-medium);
+  --sk-input-gap:           var(--sk-space-1);
+
+  /* Badge */
+  --sk-badge-padding-x:     var(--sk-space-2);
+  --sk-badge-padding-y:     2px;
+  --sk-badge-radius:        var(--sk-radius-full);
+  --sk-badge-font-size:     var(--sk-font-size-xs);
+  --sk-badge-font-weight:   var(--sk-font-weight-semibold);
+
+  /* ProductCard */
+  --sk-card-radius:         var(--sk-radius-lg);
+  --sk-card-padding:        var(--sk-space-3);
+  --sk-card-border-color:   var(--sk-color-border-light);
+  --sk-card-image-radius:   var(--sk-radius-md);
+  --sk-card-image-h:        160px;
+  --sk-card-image-w-horiz:  80px;
+  --sk-card-width:          200px;
+  --sk-card-transition:     box-shadow 150ms ease;
+
+  /* Topbar */
+  --sk-topbar-height:       52px;
+  --sk-topbar-padding-x:    var(--sk-space-4);
+  --sk-topbar-bg:           var(--sk-color-brand);
+  --sk-topbar-color:        var(--sk-white);
+  --sk-topbar-font-size:    var(--sk-font-size-lg);
+  --sk-topbar-font-weight:  var(--sk-font-weight-semibold);
+}
