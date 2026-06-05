@@ -181,18 +181,22 @@
      ---------------------------------------------------------- */
 
   /* Button */
+  --sk-btn-height-lg:       48px;
   --sk-btn-height-md:       40px;
   --sk-btn-height-sm:       32px;
   --sk-btn-height-icon:     40px;
   --sk-btn-width-icon:      40px;
+  --sk-btn-padding-x-lg:    var(--sk-space-6);
   --sk-btn-padding-x-md:    var(--sk-space-4);
   --sk-btn-padding-x-sm:    var(--sk-space-3);
   --sk-btn-radius:          var(--sk-radius-md);
+  --sk-btn-font-size-lg:    var(--sk-font-size-base);
   --sk-btn-font-size-md:    var(--sk-font-size-base);
   --sk-btn-font-size-sm:    var(--sk-font-size-sm);
   --sk-btn-font-weight:     var(--sk-font-weight-semibold);
   --sk-btn-gap:             var(--sk-space-2);
-  --sk-btn-transition:      background-color 150ms ease, opacity 150ms ease;
+  --sk-btn-transition:      background-color 150ms ease, box-shadow 150ms ease,
+                            transform 100ms ease, filter 120ms ease;
 
   /* Input */
   --sk-input-height:        40px;

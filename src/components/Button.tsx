@@ -1,8 +1,8 @@
 import { Plus, User } from "lucide-react";
 import type { CSSProperties } from "react";
 
-export type ButtonVariant = "primary" | "secondary" | "danger" | "outline" | "ghost";
-export type ButtonSize = "md" | "sm" | "icon";
+export type ButtonVariant = "primary" | "secondary" | "tertiary" | "danger";
+export type ButtonSize = "lg" | "md" | "sm" | "icon";
 
 export interface ButtonProps {
   variant?: ButtonVariant;
@@ -26,8 +26,8 @@ const baseStyle: CSSProperties = {
   fontFamily: "var(--sk-font-family)",
   fontWeight: "var(--sk-btn-font-weight)",
   cursor: "pointer",
-  transition: "var(--sk-btn-transition)",
   outline: "none",
+  position: "relative",
 };
 
 const variantStyle: Record<ButtonVariant, CSSProperties> = {
@@ -36,33 +36,33 @@ const variantStyle: Record<ButtonVariant, CSSProperties> = {
     color: "var(--sk-color-text-on-brand)",
   },
   secondary: {
-    backgroundColor: "var(--sk-color-brand-subtle)",
-    color: "var(--sk-color-text-on-brand)",
+    backgroundColor: "var(--sk-color-surface)",
+    color: "var(--sk-color-brand)",
+    border: "1px solid var(--sk-color-brand)",
+  },
+  tertiary: {
+    backgroundColor: "transparent",
+    color: "var(--sk-color-text-label)",
   },
   danger: {
     backgroundColor: "var(--sk-color-danger)",
     color: "var(--sk-color-text-on-brand)",
   },
-  outline: {
-    backgroundColor: "var(--sk-color-surface)",
-    color: "var(--sk-color-brand)",
-    border: "1px solid var(--sk-color-brand)",
-  },
-  ghost: {
-    backgroundColor: "transparent",
-    color: "var(--sk-color-text-label)",
-  },
 };
 
 const disabledStyle: Record<ButtonVariant, CSSProperties> = {
-  primary:   { backgroundColor: "var(--sk-color-brand-subtle)",  color: "var(--sk-color-text-on-brand)", cursor: "not-allowed", opacity: 0.7 },
-  secondary: { backgroundColor: "var(--sk-color-brand-muted)",   color: "var(--sk-color-text-on-brand)", cursor: "not-allowed", opacity: 0.7 },
-  danger:    { backgroundColor: "var(--sk-color-danger-muted)",  color: "var(--sk-color-text-on-brand)", cursor: "not-allowed", opacity: 0.7 },
-  outline:   { border: "1px solid var(--sk-color-brand-subtle)", color: "var(--sk-color-brand-subtle)",  cursor: "not-allowed", opacity: 0.7, backgroundColor: "transparent" },
-  ghost:     { color: "var(--sk-color-text-disabled)", cursor: "not-allowed", backgroundColor: "transparent", opacity: 0.6 },
+  primary:   { backgroundColor: "var(--sk-color-brand-subtle)",  color: "var(--sk-color-text-on-brand)",  cursor: "not-allowed", opacity: 0.65 },
+  secondary: { border: "1px solid var(--sk-color-brand-subtle)", color: "var(--sk-color-brand-subtle)",   cursor: "not-allowed", opacity: 0.65, backgroundColor: "transparent" },
+  tertiary:  { color: "var(--sk-color-text-disabled)",           cursor: "not-allowed", backgroundColor: "transparent", opacity: 0.6 },
+  danger:    { backgroundColor: "var(--sk-color-danger-muted)",  color: "var(--sk-color-text-on-brand)",  cursor: "not-allowed", opacity: 0.65 },
 };
 
-const sizeStyle: Record<"md" | "sm", CSSProperties> = {
+const sizeStyle: Record<"lg" | "md" | "sm", CSSProperties> = {
+  lg: {
+    height: "var(--sk-btn-height-lg)",
+    padding: "0 var(--sk-btn-padding-x-lg)",
+    fontSize: "var(--sk-btn-font-size-lg)",
+  },
   md: {
     height: "var(--sk-btn-height-md)",
     padding: "0 var(--sk-btn-padding-x-md)",
@@ -75,6 +75,8 @@ const sizeStyle: Record<"md" | "sm", CSSProperties> = {
   },
 };
 
+const iconSizeMap: Record<ButtonSize, number> = { lg: 18, md: 16, sm: 14, icon: 18 };
+
 export function Button({
   variant = "primary",
   size = "md",
@@ -86,14 +88,18 @@ export function Button({
   className = "",
 }: ButtonProps) {
   const activeStyle = disabled ? disabledStyle[variant] : variantStyle[variant];
-  const iconSize = size === "md" ? 16 : 14;
+  const iconSize = iconSizeMap[size];
+
+  /* CSS classes for hover animation (CSS :hover can't be done via inline styles) */
+  const hoverClass = disabled ? "" : `sk-btn sk-btn-${variant}`;
+  const finalClass = [hoverClass, className].filter(Boolean).join(" ");
 
   if (size === "icon") {
     return (
       <button
         onClick={disabled ? undefined : onClick}
         disabled={disabled}
-        className={className}
+        className={finalClass}
         style={{
           ...baseStyle,
           ...activeStyle,
@@ -101,7 +107,7 @@ export function Button({
           height: "var(--sk-btn-height-icon)",
         }}
       >
-        <Plus size={18} strokeWidth={2.5} />
+        <Plus size={iconSize} strokeWidth={2.5} />
       </button>
     );
   }
@@ -110,7 +116,7 @@ export function Button({
     <button
       onClick={disabled ? undefined : onClick}
       disabled={disabled}
-      className={className}
+      className={finalClass}
       style={{ ...baseStyle, ...sizeStyle[size], ...activeStyle }}
     >
       {showLeadingIcon && <User size={iconSize} strokeWidth={2} />}

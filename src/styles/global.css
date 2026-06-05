@@ -571,6 +571,46 @@ body {
   line-height: 1.5;
 }
 
+/* ── Button hover animations ──────────────────────────────── */
+.sk-btn {
+  transition: var(--sk-btn-transition);
+  position: relative;
+}
+
+.sk-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.sk-btn:active:not(:disabled) {
+  transform: translateY(0px);
+  box-shadow: none;
+}
+
+.sk-btn-primary:hover:not(:disabled) {
+  background-color: var(--sk-color-brand-hover) !important;
+}
+
+.sk-btn-primary:active:not(:disabled) {
+  background-color: var(--sk-color-brand-active) !important;
+}
+
+.sk-btn-secondary:hover:not(:disabled) {
+  filter: brightness(0.94);
+}
+
+.sk-btn-tertiary:hover:not(:disabled) {
+  background-color: var(--sk-color-surface-subtle) !important;
+}
+
+.sk-btn-danger:hover:not(:disabled) {
+  background-color: var(--sk-color-danger-hover) !important;
+}
+
+.sk-btn-danger:active:not(:disabled) {
+  background-color: var(--sk-color-danger-active) !important;
+}
+
 /* ── Variant showcase ─────────────────────────────────────── */
 .variant-row {
   display: flex;
