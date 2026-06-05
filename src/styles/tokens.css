@@ -239,3 +239,55 @@
   --sk-topbar-font-size:    var(--sk-font-size-lg);
   --sk-topbar-font-weight:  var(--sk-font-weight-semibold);
 }
+
+/* ============================================================
+   DARK MODE — sobreescribe únicamente los semánticos
+   Se activa agregando la clase .dark al elemento <html>
+   ============================================================ */
+
+.dark {
+
+  /* Superficies */
+  --sk-color-surface:        #0d1117;
+  --sk-color-surface-muted:  #161b22;
+  --sk-color-surface-subtle: #21262d;
+
+  /* Textos */
+  --sk-color-text-primary:   #f0f6fc;
+  --sk-color-text-body:      #c9d1d9;
+  --sk-color-text-secondary: #8b949e;
+  --sk-color-text-disabled:  #484f58;
+  --sk-color-text-label:     #e6edf3;
+  --sk-color-text-on-brand:  #ffffff;
+
+  /* Bordes */
+  --sk-color-border:               #30363d;
+  --sk-color-border-light:         #21262d;
+  --sk-color-border-focus-brand:   #4d9aff;
+  --sk-color-border-focus-danger:  #f85149;
+
+  /* Brand — ligeramente más brillante para contraste en dark */
+  --sk-color-brand:        #4d9aff;
+  --sk-color-brand-hover:  #60a8ff;
+  --sk-color-brand-active: #3d8ff0;
+  --sk-color-brand-subtle: #388bfd;
+  --sk-color-brand-muted:  rgba(77, 154, 255, 0.22);
+  --sk-color-brand-bg:     rgba(77, 154, 255, 0.08);
+
+  /* Danger */
+  --sk-color-danger:        #f85149;
+  --sk-color-danger-hover:  #ff7b72;
+  --sk-color-danger-active: #ffa198;
+  --sk-color-danger-muted:  rgba(248, 81, 73, 0.32);
+  --sk-color-danger-bg:     rgba(248, 81, 73, 0.1);
+
+  /* Warning */
+  --sk-color-warning-bg:     rgba(210, 153, 34, 0.12);
+  --sk-color-warning-text:   #d29922;
+  --sk-color-warning-border: rgba(210, 153, 34, 0.4);
+
+  /* Helper message colors (input) */
+  --sk-input-helper-color-help:    #4d9aff;
+  --sk-input-helper-color-warning: #d29922;
+  --sk-input-helper-color-error:   #f85149;
+}

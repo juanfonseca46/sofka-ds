@@ -631,3 +631,203 @@ body {
   letter-spacing: 0.08em;
   min-width: 80px;
 }
+
+/* ============================================================
+   DARK MODE — overrides de la UI de documentación
+   Los componentes DS se adaptan solos vía tokens semánticos.
+   Aquí solo corregimos las clases de la docs-app que usan
+   valores hardcodeados o tokens primitivos.
+   ============================================================ */
+
+/* ── Layout ───────────────────────────────────────────────── */
+.dark .docs-content {
+  background: #0d1117;
+}
+
+/* ── Preview box ──────────────────────────────────────────── */
+.dark .preview-controls {
+  background: #161b22;
+  border-bottom-color: #21262d;
+}
+
+.dark .preview-canvas {
+  background-color: #161b22;
+  background-image: radial-gradient(circle, #30363d 1px, transparent 1px);
+}
+
+.dark .preview-box {
+  border-color: #21262d;
+}
+
+/* ── Controls ─────────────────────────────────────────────── */
+.dark .control-btn {
+  background: #21262d;
+  border-color: #30363d;
+  color: #c9d1d9;
+}
+
+.dark .control-btn:hover {
+  border-color: #4d9aff;
+  color: #4d9aff;
+}
+
+.dark .control-btn.selected {
+  background: #4d9aff;
+  border-color: #4d9aff;
+  color: #0d1117;
+}
+
+/* ── Tablas ───────────────────────────────────────────────── */
+.dark .doc-table {
+  border-color: #21262d;
+}
+
+.dark .doc-table thead {
+  background: #161b22;
+}
+
+.dark .doc-table th {
+  border-bottom-color: #21262d;
+  color: #8b949e;
+}
+
+.dark .doc-table td {
+  border-bottom-color: #21262d;
+  color: #c9d1d9;
+}
+
+.dark .doc-table tr:hover td {
+  background: #161b22;
+}
+
+.dark .token-name {
+  background: rgba(77, 154, 255, 0.1);
+  color: #79c0ff;
+}
+
+.dark .prop-type {
+  background: rgba(188, 140, 255, 0.1);
+  color: #bc8cff;
+}
+
+/* ── Page header ──────────────────────────────────────────── */
+.dark .page-header {
+  border-bottom-color: #21262d;
+}
+
+.dark .page-badge {
+  background: rgba(77, 154, 255, 0.1);
+  border-color: rgba(77, 154, 255, 0.25);
+  color: #79c0ff;
+}
+
+.dark .page-title {
+  color: #f0f6fc;
+}
+
+.dark .page-description {
+  color: #8b949e;
+}
+
+/* ── Section titles ───────────────────────────────────────── */
+.dark .section-title {
+  color: #e6edf3;
+}
+
+.dark .section-title::after {
+  background: #21262d;
+}
+
+/* ── Overview cards ───────────────────────────────────────── */
+.dark .overview-card {
+  background: #161b22;
+  border-color: #21262d;
+}
+
+.dark .overview-card:hover {
+  border-color: rgba(77, 154, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.dark .overview-card-title {
+  color: #f0f6fc;
+}
+
+.dark .overview-card-desc {
+  color: #8b949e;
+}
+
+.dark .overview-card-icon {
+  background: rgba(77, 154, 255, 0.1);
+  color: #79c0ff;
+}
+
+/* ── Color chips (paleta) ─────────────────────────────────── */
+.dark .color-chip {
+  border-color: #21262d;
+}
+
+.dark .color-chip-info {
+  background: #161b22;
+  border-top-color: #21262d;
+}
+
+.dark .color-chip-name {
+  color: #8b949e;
+}
+
+.dark .color-chip-hex {
+  color: #e6edf3;
+}
+
+/* ── Spacing visualizer ───────────────────────────────────── */
+.dark .spacing-row {
+  border-bottom-color: #21262d;
+}
+
+.dark .spacing-bar {
+  background: rgba(77, 154, 255, 0.2);
+}
+
+.dark .spacing-name {
+  background: rgba(77, 154, 255, 0.1);
+  color: #79c0ff;
+}
+
+.dark .spacing-px {
+  color: #8b949e;
+}
+
+/* ── Code block ───────────────────────────────────────────── */
+.dark .code-block {
+  border-color: #30363d;
+}
+
+/* ── Theme toggle button ──────────────────────────────────── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--sk-font-family);
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.14);
+  color: #e2e8f0;
+}
+
+.theme-toggle-icon {
+  font-size: 15px;
+  line-height: 1;
+}

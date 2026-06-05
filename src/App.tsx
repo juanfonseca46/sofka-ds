@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   LayoutDashboard, Palette, Square, Type, Tag,
-  CreditCard, AlignJustify, ChevronRight,
+  CreditCard, AlignJustify, ChevronRight, Sun, Moon,
 } from "lucide-react";
 
 import { OverviewPage }    from "./pages/OverviewPage";
@@ -28,8 +28,8 @@ interface NavItem {
 }
 
 const foundationItems: NavItem[] = [
-  { id: "overview", label: "Overview",  icon: <LayoutDashboard size={15} /> },
-  { id: "tokens",   label: "Tokens",    icon: <Palette size={15} /> },
+  { id: "overview", label: "Overview", icon: <LayoutDashboard size={15} /> },
+  { id: "tokens",   label: "Tokens",   icon: <Palette size={15} /> },
 ];
 
 const componentItems: NavItem[] = [
@@ -43,12 +43,32 @@ const componentItems: NavItem[] = [
 export default function App() {
   const [page, setPage] = useState<Page>("overview");
 
+  /* ── Dark mode — persiste en localStorage ────────────────── */
+  const [isDark, setIsDark] = useState(() => {
+    const stored = localStorage.getItem("sk-theme");
+    if (stored) return stored === "dark";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
+
+  useEffect(() => {
+    const html = document.documentElement;
+    if (isDark) {
+      html.classList.add("dark");
+      localStorage.setItem("sk-theme", "dark");
+    } else {
+      html.classList.remove("dark");
+      localStorage.setItem("sk-theme", "light");
+    }
+  }, [isDark]);
+
   const navigate = (p: string) => setPage(p as Page);
 
   return (
     <div className="docs-layout">
       {/* ── Sidebar ──────────────────────────────────────── */}
       <aside className="docs-sidebar">
+
+        {/* Brand */}
         <div className="sidebar-brand">
           <div className="sidebar-brand-logo"><span>SK</span></div>
           <div className="sidebar-brand-text">
@@ -57,6 +77,7 @@ export default function App() {
           </div>
         </div>
 
+        {/* Nav */}
         <nav className="sidebar-nav">
           <div className="sidebar-group">
             <p className="sidebar-group-label">Fundaciones</p>
@@ -93,16 +114,37 @@ export default function App() {
           </div>
         </nav>
 
-        <div style={{
-          padding: "16px 20px",
-          borderTop: "1px solid rgba(255,255,255,0.06)",
-          fontSize: 11,
-          color: "#475569",
-          lineHeight: 1.6,
-        }}>
-          React · TypeScript · Vite<br />
-          CSS Custom Properties
+        {/* Footer — toggle + tech stack */}
+        <div style={{ marginTop: "auto" }}>
+
+          {/* Toggle dark mode */}
+          <div style={{ padding: "0 12px 12px" }}>
+            <button
+              className="theme-toggle"
+              onClick={() => setIsDark((d) => !d)}
+              aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+            >
+              {isDark
+                ? <Sun  size={15} style={{ flexShrink: 0 }} />
+                : <Moon size={15} style={{ flexShrink: 0 }} />
+              }
+              <span>{isDark ? "Modo claro" : "Modo oscuro"}</span>
+            </button>
+          </div>
+
+          {/* Tech stack */}
+          <div style={{
+            padding: "12px 20px 16px",
+            borderTop: "1px solid rgba(255,255,255,0.06)",
+            fontSize: 11,
+            color: "#475569",
+            lineHeight: 1.6,
+          }}>
+            React · TypeScript · Vite<br />
+            CSS Custom Properties
+          </div>
         </div>
+
       </aside>
 
       {/* ── Content ──────────────────────────────────────── */}
