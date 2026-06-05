@@ -97,7 +97,7 @@ const spacing = [
 ];
 
 const radii = [
-  { name: "--sk-radius-sm",   px: "6px",    desc: "Chips pequeños" },
+  { name: "--sk-radius-sm",   px: "4px",    desc: "Badges, chips pequeños" },
   { name: "--sk-radius-md",   px: "8px",    desc: "Botones, inputs" },
   { name: "--sk-radius-lg",   px: "12px",   desc: "Cards, popovers" },
   { name: "--sk-radius-xl",   px: "16px",   desc: "Modales" },

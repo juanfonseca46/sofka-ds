@@ -7,7 +7,7 @@ const variants: BadgeVariant[] = ["warning", "danger", "neutral"];
 const tokenRows = [
   { token: "--sk-badge-padding-x",   value: "var(--sk-space-2)", desc: "Padding horizontal" },
   { token: "--sk-badge-padding-y",   value: "2px",               desc: "Padding vertical" },
-  { token: "--sk-badge-radius",      value: "var(--sk-radius-full)", desc: "Forma pill" },
+  { token: "--sk-badge-radius",      value: "var(--sk-radius-sm)",  desc: "Redondeo cuadrado (4px)" },
   { token: "--sk-badge-font-size",   value: "var(--sk-font-size-xs)", desc: "Tamaño de fuente (11px)" },
   { token: "--sk-badge-font-weight", value: "var(--sk-font-weight-semibold)", desc: "Peso de fuente" },
   { token: "--sk-color-warning-bg",    value: "#FEF9C3", desc: "Fondo warning" },

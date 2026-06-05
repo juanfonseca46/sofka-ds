@@ -155,7 +155,7 @@
   /* ----------------------------------------------------------
      BORDES Y RADIOS
      ---------------------------------------------------------- */
-  --sk-radius-sm:   6px;
+  --sk-radius-sm:   4px;
   --sk-radius-md:   8px;
   --sk-radius-lg:   12px;
   --sk-radius-xl:   16px;
@@ -217,7 +217,7 @@
   /* Badge */
   --sk-badge-padding-x:     var(--sk-space-2);
   --sk-badge-padding-y:     2px;
-  --sk-badge-radius:        var(--sk-radius-full);
+  --sk-badge-radius:        var(--sk-radius-sm);   /* 4px */
   --sk-badge-font-size:     var(--sk-font-size-xs);
   --sk-badge-font-weight:   var(--sk-font-weight-semibold);
 
