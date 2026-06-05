@@ -199,14 +199,20 @@
                             transform 100ms ease, filter 120ms ease;
 
   /* Input */
-  --sk-input-height:        40px;
-  --sk-input-padding-x:     var(--sk-space-3);
-  --sk-input-radius:        var(--sk-radius-md);
-  --sk-input-font-size:     var(--sk-font-size-md);
-  --sk-input-label-size:    var(--sk-font-size-sm);
-  --sk-input-helper-size:   var(--sk-font-size-xs);
-  --sk-input-label-weight:  var(--sk-font-weight-medium);
-  --sk-input-gap:           var(--sk-space-1);
+  --sk-input-height:               40px;
+  --sk-input-padding-x:            var(--sk-space-3);
+  --sk-input-radius:               var(--sk-radius-md);
+  --sk-input-font-size:            var(--sk-font-size-md);
+  --sk-input-label-size:           var(--sk-font-size-sm);
+  --sk-input-label-weight:         var(--sk-font-weight-medium);
+  --sk-input-helper-size:          var(--sk-font-size-xs);
+  --sk-input-helper-weight:        var(--sk-font-weight-medium);
+  --sk-input-helper-gap:           var(--sk-space-1);
+  --sk-input-gap:                  var(--sk-space-1);
+  /* Helper message colors por tipo */
+  --sk-input-helper-color-help:    var(--sk-color-brand);
+  --sk-input-helper-color-warning: var(--sk-color-warning-text);
+  --sk-input-helper-color-error:   var(--sk-color-danger);
 
   /* Badge */
   --sk-badge-padding-x:     var(--sk-space-2);
