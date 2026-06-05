@@ -105,14 +105,26 @@
   --sk-font-family:        'Poppins', sans-serif;
   --sk-font-mono:          'JetBrains Mono', monospace;
 
-  --sk-font-size-xs:       11px;
-  --sk-font-size-sm:       12px;
-  --sk-font-size-md:       13px;
-  --sk-font-size-base:     14px;
-  --sk-font-size-lg:       16px;
-  --sk-font-size-xl:       20px;
-  --sk-font-size-2xl:      24px;
-  --sk-font-size-3xl:      32px;
+  /* Escala primitiva de tamaños */
+  --sk-font-size-xs:       11px;   /* Alternative / Label     */
+  --sk-font-size-sm:       12px;   /* Body / B2               */
+  --sk-font-size-md:       13px;   /* Input text (interno)    */
+  --sk-font-size-base:     14px;   /* Body / B1 · Button      */
+  --sk-font-size-lg:       16px;   /* Topbar / UI medium      */
+  --sk-font-size-xl:       18px;   /* Heading / H4            */
+  --sk-font-size-2xl:      24px;   /* Heading / H3            */
+  --sk-font-size-3xl:      32px;   /* Heading / H2            */
+  --sk-font-size-4xl:      40px;   /* Heading / H1            */
+
+  /* Alias semánticos tipográficos */
+  --sk-text-h1:            var(--sk-font-size-4xl);   /* 40px */
+  --sk-text-h2:            var(--sk-font-size-3xl);   /* 32px */
+  --sk-text-h3:            var(--sk-font-size-2xl);   /* 24px */
+  --sk-text-h4:            var(--sk-font-size-xl);    /* 18px */
+  --sk-text-body-1:        var(--sk-font-size-base);  /* 14px */
+  --sk-text-body-2:        var(--sk-font-size-sm);    /* 12px */
+  --sk-text-label:         var(--sk-font-size-xs);    /* 11px */
+  --sk-text-button:        var(--sk-font-size-base);  /* 14px */
 
   --sk-font-weight-normal:   400;
   --sk-font-weight-medium:   500;
@@ -147,6 +159,8 @@
   --sk-radius-md:   8px;
   --sk-radius-lg:   12px;
   --sk-radius-xl:   16px;
+  --sk-radius-2xl:  20px;
+  --sk-radius-3xl:  32px;
   --sk-radius-full: 9999px;
 
 
