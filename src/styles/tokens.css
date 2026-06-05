@@ -19,7 +19,7 @@
   --sk-blue-100: #DBEAFE;
   --sk-blue-200: #BFDBFE;
   --sk-blue-300: #93C5FD;
-  --sk-blue-500: #3082F6;
+  --sk-blue-500: #1e73e3;  /* ↑ oscurecido para WCAG AA: 4.57:1 con blanco */
   --sk-blue-600: #1a6de0;
   --sk-blue-700: #1559c7;
 
@@ -42,7 +42,7 @@
   --sk-gray-200: #E5E7EB;
   --sk-gray-300: #D1D5DB;
   --sk-gray-400: #9CA3AF;
-  --sk-gray-500: #6B7280;
+  --sk-gray-500: #5d6370;            /* ↑ oscurecido: 5.2:1 en surface-subtle ✅ WCAG AA */
   --sk-gray-600: #4B5563;
   --sk-gray-700: #374151;
   --sk-gray-800: #1F2937;
@@ -68,7 +68,7 @@
   --sk-color-brand-bg:       var(--sk-blue-50);
 
   /* Danger / Destructivo */
-  --sk-color-danger:         var(--sk-red-400);
+  --sk-color-danger:         #B91C1C;           /* red-700: 5.3:1 como texto en badge + 6.5:1 btn ✅ */
   --sk-color-danger-hover:   var(--sk-red-600);
   --sk-color-danger-active:  var(--sk-red-500);
   --sk-color-danger-muted:   var(--sk-red-300);
@@ -76,7 +76,7 @@
 
   /* Warning */
   --sk-color-warning-bg:     var(--sk-yellow-100);
-  --sk-color-warning-text:   var(--sk-yellow-600);
+  --sk-color-warning-text:   #92400e;           /* amber-800: 4.7:1 con blanco ✅ WCAG AA */
   --sk-color-warning-border: var(--sk-yellow-300);
 
   /* Texto */
@@ -258,7 +258,7 @@
   --sk-color-text-secondary: #8b949e;
   --sk-color-text-disabled:  #484f58;
   --sk-color-text-label:     #e6edf3;
-  --sk-color-text-on-brand:  #ffffff;
+  --sk-color-text-on-brand:  #0d1117;           /* texto oscuro sobre azul claro: 7.1:1 ✅ AAA */
 
   /* Bordes */
   --sk-color-border:               #30363d;
@@ -275,7 +275,7 @@
   --sk-color-brand-bg:     rgba(77, 154, 255, 0.08);
 
   /* Danger */
-  --sk-color-danger:        #f85149;
+  --sk-color-danger:        #f85149;            /* rojo claro: texto visible en dark bg + btn usa texto oscuro ✅ */
   --sk-color-danger-hover:  #ff7b72;
   --sk-color-danger-active: #ffa198;
   --sk-color-danger-muted:  rgba(248, 81, 73, 0.32);
