@@ -339,65 +339,6 @@ export function TokensPage() {
           {" "}— 8 estilos organizados en 4 categorías.
         </p>
 
-        {/* Preview visual (fiel al frame de Figma) */}
-        <div style={{
-          background: "var(--sk-white)",
-          border: "1px solid var(--sk-color-border-light)",
-          borderRadius: 12,
-          padding: "28px 32px",
-          marginBottom: 24,
-          display: "flex",
-          flexDirection: "column",
-          gap: 10,
-        }}>
-          {[
-            { label: "Heading / H1 / 40px", size: "40px", weight: 700 },
-            { label: "Heading / H2 / 32px", size: "32px", weight: 700 },
-            { label: "Heading / H3 / 24px", size: "24px", weight: 600 },
-            { label: "Heading / H4 / 18px", size: "18px", weight: 600 },
-          ].map((s) => (
-            <p key={s.label} style={{
-              fontFamily: "var(--sk-font-family)",
-              fontSize: s.size,
-              fontWeight: s.weight,
-              color: "var(--sk-color-text-primary)",
-              lineHeight: 1.2,
-            }}>
-              {s.label}
-            </p>
-          ))}
-          <div style={{ borderTop: "1px solid var(--sk-color-border-light)", paddingTop: 10, marginTop: 6, display: "flex", flexDirection: "column", gap: 6 }}>
-            {[
-              { label: "Body / B1 / 14px",            size: "14px", weight: 400 },
-              { label: "Body / B2 / 12px",            size: "12px", weight: 400 },
-            ].map((s) => (
-              <p key={s.label} style={{
-                fontFamily: "var(--sk-font-family)",
-                fontSize: s.size,
-                fontWeight: s.weight,
-                color: "var(--sk-color-text-body)",
-              }}>
-                {s.label}
-              </p>
-            ))}
-          </div>
-          <div style={{ borderTop: "1px solid var(--sk-color-border-light)", paddingTop: 10, display: "flex", flexDirection: "column", gap: 6 }}>
-            {[
-              { label: "Alternative / Label / 11px",  size: "11px", weight: 500 },
-              { label: "Alternative / Button / 14px", size: "14px", weight: 600 },
-            ].map((s) => (
-              <p key={s.label} style={{
-                fontFamily: "var(--sk-font-family)",
-                fontSize: s.size,
-                fontWeight: s.weight,
-                color: "var(--sk-color-text-secondary)",
-              }}>
-                {s.label}
-              </p>
-            ))}
-          </div>
-        </div>
-
         {/* Tabla de tokens */}
         {typographyScale.map((group) => (
           <div key={group.category} style={{ marginBottom: 24 }}>
