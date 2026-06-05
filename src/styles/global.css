@@ -153,6 +153,7 @@ body {
 .docs-page {
   max-width: 860px;
   padding: 48px 56px;
+  margin: 0 auto;
 }
 
 /* ── Page header ───────────────────────────────────────────── */
