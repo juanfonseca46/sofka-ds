@@ -572,6 +572,349 @@ body {
   line-height: 1.5;
 }
 
+/* ── Page Header ──────────────────────────────────────────── */
+.sk-page-header {
+  background: var(--sk-color-surface);
+  padding: var(--sk-space-8) var(--sk-space-4) var(--sk-space-4);
+  width: 100%;
+}
+
+.sk-page-header__row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--sk-space-4);
+}
+
+.sk-page-header__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sk-space-2);
+  flex: 1;
+  min-width: 0;
+}
+
+.sk-page-header__title {
+  font-family: var(--sk-font-family);
+  font-size: var(--sk-font-size-2xl);       /* 24px — H3 */
+  font-weight: var(--sk-font-weight-semibold);
+  color: var(--sk-color-text-primary);
+  line-height: 1.33;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sk-page-header__subtitle {
+  font-family: var(--sk-font-family);
+  font-size: var(--sk-font-size-base);      /* 14px — Body/1 */
+  font-weight: var(--sk-font-weight-normal);
+  color: var(--sk-color-text-body);
+  line-height: 1.57;
+  margin: 0;
+}
+
+.sk-page-header__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: var(--sk-radius-md);
+  border: none;
+  cursor: pointer;
+  transition: background-color 120ms ease;
+  margin-top: 2px; /* alinea ópticamente con el título */
+}
+
+.sk-page-header__btn--back {
+  background: var(--sk-color-surface-subtle);
+  color: var(--sk-gray-600);
+}
+
+.sk-page-header__btn--back:hover {
+  background: var(--sk-gray-200);
+}
+
+.sk-page-header__btn--action {
+  background: transparent;
+  color: var(--sk-color-brand);
+}
+
+.sk-page-header__btn--action:hover {
+  background: var(--sk-color-brand-bg);
+}
+
+/* Dark mode */
+.dark .sk-page-header__btn--back {
+  background: var(--sk-color-surface-subtle);
+  color: var(--sk-color-text-secondary);
+}
+
+.dark .sk-page-header__btn--back:hover {
+  background: var(--sk-color-border);
+}
+
+/* ── Stat Card (Card Home) ────────────────────────────────── */
+.sk-stat-card {
+  /* layout */
+  display:        flex;
+  flex-direction: row;
+  align-items:    center;
+  padding:        var(--sk-space-2) var(--sk-space-4);  /* 8px 16px */
+  gap:            var(--sk-space-4);                    /* 16px */
+  min-width:      140px;
+
+  /* apariencia */
+  background:     var(--sk-color-surface);
+  border:         1px solid var(--sk-color-border);
+  border-radius:  var(--sk-radius-md);                  /* 8px */
+  cursor:         pointer;
+  text-align:     left;
+  font-family:    var(--sk-font-family);
+  transition:     box-shadow 150ms ease, border-color 150ms ease;
+}
+
+.sk-stat-card:hover {
+  box-shadow:     var(--sk-shadow-md);
+  border-color:   var(--sk-color-border-light);
+}
+
+/* Variante warning — pocas unidades */
+.sk-stat-card--warning {
+  background:   var(--sk-color-warning-bg);
+  border-color: var(--sk-color-warning-border);
+}
+
+.sk-stat-card--warning:hover {
+  box-shadow: 0 4px 12px rgba(146, 64, 14, 0.12);
+}
+
+/* Variante danger — sin stock */
+.sk-stat-card--danger {
+  background:   var(--sk-color-danger-bg);
+  border-color: var(--sk-color-danger-muted);
+}
+
+.sk-stat-card--danger:hover {
+  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.12);
+}
+
+/* Bloque body (icono + valor + label) */
+.sk-stat-card__body {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--sk-space-1);  /* 4px */
+  flex:           1;
+  min-width:      0;
+}
+
+.sk-stat-card__top {
+  display:     flex;
+  align-items: center;
+  gap:         var(--sk-space-2);  /* 8px */
+}
+
+/* Ícono izquierdo */
+.sk-stat-card__icon {
+  display:     flex;
+  flex-shrink: 0;
+  color:       var(--sk-color-text-primary);
+}
+
+.sk-stat-card--warning .sk-stat-card__icon {
+  color: var(--sk-color-warning-text);
+}
+
+.sk-stat-card--danger .sk-stat-card__icon {
+  color: var(--sk-color-danger);
+}
+
+/* Valor principal */
+.sk-stat-card__value {
+  font-size:   var(--sk-font-size-2xl);       /* 24px — H3 */
+  font-weight: var(--sk-font-weight-semibold);
+  color:       var(--sk-color-text-primary);
+  line-height: 1.33;
+}
+
+.sk-stat-card--warning .sk-stat-card__value {
+  color: var(--sk-color-warning-text);
+}
+
+.sk-stat-card--danger .sk-stat-card__value {
+  color: var(--sk-color-danger);
+}
+
+/* Etiqueta secundaria */
+.sk-stat-card__label {
+  font-size:   var(--sk-font-size-xs);       /* 11px — Label */
+  font-weight: var(--sk-font-weight-medium);
+  color:       var(--sk-gray-600);
+  line-height: 1.45;
+}
+
+.sk-stat-card--warning .sk-stat-card__label {
+  color: var(--sk-color-warning-text);
+  opacity: 0.8;
+}
+
+.sk-stat-card--danger .sk-stat-card__label {
+  color: var(--sk-color-danger);
+  opacity: 0.8;
+}
+
+/* Chevron derecho */
+.sk-stat-card__arrow {
+  display:     flex;
+  align-items: center;
+  flex-shrink: 0;
+  color:       var(--sk-gray-600);
+}
+
+.sk-stat-card--warning .sk-stat-card__arrow {
+  color: var(--sk-color-warning-text);
+}
+
+.sk-stat-card--danger .sk-stat-card__arrow {
+  color: var(--sk-color-danger);
+}
+
+/* Dark mode */
+.dark .sk-stat-card {
+  border-color: var(--sk-color-border);
+}
+
+.dark .sk-stat-card__label {
+  color: var(--sk-color-text-secondary);
+}
+
+.dark .sk-stat-card__arrow {
+  color: var(--sk-color-text-secondary);
+}
+
+/* ── Movement Card ────────────────────────────────────────── */
+.sk-movement-card {
+  display:        flex;
+  flex-direction: row;
+  align-items:    center;
+  padding:        0 0 0 var(--sk-space-2);  /* left: 8px */
+  gap:            var(--sk-space-4);        /* 16px */
+  width:          100%;
+  min-height:     66px;
+
+  background:   var(--sk-color-surface);
+  border:       none;
+  border-radius: 0;
+  cursor:       pointer;
+  font-family:  var(--sk-font-family);
+  text-align:   left;
+  transition:   background-color 120ms ease;
+}
+
+.sk-movement-card:hover {
+  background: var(--sk-color-surface-muted);
+}
+
+/* Dark variant */
+.sk-movement-card--dark {
+  background: #111827;
+}
+
+.sk-movement-card--dark:hover {
+  background: #1a2232;
+}
+
+/* Ícono contenedor */
+.sk-movement-card__icon-wrap {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  width:  48px;
+  height: 48px;
+  border-radius: var(--sk-radius-md);
+  flex-shrink: 0;
+}
+
+/* Entrada — verde */
+.sk-movement-card__icon-wrap--entrada {
+  background: var(--sk-color-success-bg);
+  color:      var(--sk-color-success-icon);
+}
+
+/* Salida — rojo */
+.sk-movement-card__icon-wrap--salida {
+  background: var(--sk-color-danger-bg);
+  color:      var(--sk-color-danger-active);
+}
+
+/* El ícono mantiene color en dark (los fondos son los mismos) */
+.sk-movement-card--dark .sk-movement-card__icon-wrap--entrada {
+  background: var(--sk-color-success-bg);
+  color:      var(--sk-color-success-icon);
+}
+
+.sk-movement-card--dark .sk-movement-card__icon-wrap--salida {
+  background: #FFE5E5;
+  color:      #EF4444;
+}
+
+/* Bloque de texto */
+.sk-movement-card__text {
+  display:        flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.sk-movement-card__label {
+  font-size:   var(--sk-font-size-base);      /* 14px — Body/1 */
+  font-weight: var(--sk-font-weight-normal);
+  color:       var(--sk-color-text-primary);
+  line-height: 1.57;
+  white-space: nowrap;
+  overflow:    hidden;
+  text-overflow: ellipsis;
+}
+
+.sk-movement-card__amount {
+  font-size:   var(--sk-font-size-base);      /* 14px — Button weight */
+  font-weight: var(--sk-font-weight-semibold);
+  color:       var(--sk-color-text-primary);
+  line-height: 1.43;
+}
+
+/* Dark: texto en gris claro */
+.sk-movement-card--dark .sk-movement-card__label,
+.sk-movement-card--dark .sk-movement-card__amount {
+  color: var(--sk-gray-100);
+}
+
+/* Chevron */
+.sk-movement-card__chevron {
+  display:     flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding:     var(--sk-space-2) 4px;
+  color:       var(--sk-color-text-body);
+}
+
+.sk-movement-card--dark .sk-movement-card__chevron {
+  color: var(--sk-gray-100);
+}
+
+/* Separador entre cards en lista */
+.sk-movement-card + .sk-movement-card {
+  border-top: 1px solid var(--sk-color-border-light);
+}
+
+.sk-movement-card--dark + .sk-movement-card--dark {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
 /* ── Button hover animations ──────────────────────────────── */
 .sk-btn {
   transition: var(--sk-btn-transition);
