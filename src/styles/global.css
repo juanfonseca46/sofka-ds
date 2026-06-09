@@ -915,6 +915,202 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* ── Movement Chart ───────────────────────────────────────── */
+.sk-movement-chart {
+  background:    var(--sk-color-surface);
+  border:        1px solid var(--sk-color-border-light);
+  border-radius: var(--sk-radius-md);
+  padding:       var(--sk-space-4);
+  display:       flex;
+  flex-direction: column;
+  gap:           var(--sk-space-4);
+  width:         100%;
+  font-family:   var(--sk-font-family);
+}
+
+/* Header */
+.sk-movement-chart__header {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             var(--sk-space-2);
+  position:        relative;
+}
+
+.sk-movement-chart__title {
+  font-size:   var(--sk-font-size-base);
+  font-weight: var(--sk-font-weight-semibold);
+  color:       var(--sk-color-text-primary);
+}
+
+/* Dropdown */
+.sk-movement-chart__dropdown-wrap {
+  position: relative;
+}
+
+.sk-movement-chart__dropdown-btn {
+  display:       flex;
+  align-items:   center;
+  gap:           var(--sk-space-2);
+  padding:       6px var(--sk-space-4);
+  background:    var(--sk-color-surface);
+  border:        1px solid var(--sk-color-border);
+  border-radius: var(--sk-radius-md);
+  color:         var(--sk-gray-600);
+  font-size:     var(--sk-font-size-sm);    /* 12px — Body/2 */
+  font-weight:   var(--sk-font-weight-normal);
+  font-family:   var(--sk-font-family);
+  cursor:        pointer;
+  white-space:   nowrap;
+  transition:    border-color 120ms ease;
+  min-width:     150px;
+  justify-content: space-between;
+}
+
+.sk-movement-chart__dropdown-btn:hover {
+  border-color: var(--sk-color-brand);
+  color:        var(--sk-color-brand);
+}
+
+.sk-movement-chart__dropdown-menu {
+  position:      absolute;
+  top:           calc(100% + 4px);
+  right:         0;
+  background:    var(--sk-color-surface);
+  border:        1px solid var(--sk-color-border-light);
+  border-radius: var(--sk-radius-md);
+  box-shadow:    var(--sk-shadow-md);
+  z-index:       10;
+  min-width:     160px;
+  overflow:      hidden;
+}
+
+.sk-movement-chart__dropdown-item {
+  display:     block;
+  width:       100%;
+  padding:     9px var(--sk-space-4);
+  background:  transparent;
+  border:      none;
+  color:       var(--sk-color-text-body);
+  font-size:   var(--sk-font-size-sm);
+  font-family: var(--sk-font-family);
+  text-align:  left;
+  cursor:      pointer;
+  transition:  background 100ms ease;
+}
+
+.sk-movement-chart__dropdown-item:hover {
+  background: var(--sk-color-surface-muted);
+}
+
+.sk-movement-chart__dropdown-item.active {
+  color:       var(--sk-color-brand);
+  font-weight: var(--sk-font-weight-semibold);
+  background:  var(--sk-color-brand-bg);
+}
+
+/* Filtros de producto */
+.sk-movement-chart__product-filters {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       var(--sk-space-2);
+}
+
+.sk-movement-chart__pill {
+  padding:       3px 10px;
+  border-radius: 999px;
+  border:        1px solid var(--sk-color-border-light);
+  background:    transparent;
+  color:         var(--sk-color-text-secondary);
+  font-size:     var(--sk-font-size-xs);    /* 11px */
+  font-weight:   var(--sk-font-weight-normal);
+  font-family:   var(--sk-font-family);
+  cursor:        pointer;
+  transition:    all 120ms ease;
+}
+
+.sk-movement-chart__pill:hover {
+  border-color: var(--sk-color-brand);
+  color:        var(--sk-color-brand);
+}
+
+.sk-movement-chart__pill.active {
+  background:   var(--sk-color-brand-bg);
+  border-color: var(--sk-color-brand);
+  color:        var(--sk-color-brand);
+  font-weight:  var(--sk-font-weight-semibold);
+}
+
+/* Cuerpo: eje Y + área del chart */
+.sk-movement-chart__body {
+  display: flex;
+  gap:     var(--sk-space-2);
+  align-items: flex-start;
+}
+
+/* Eje Y */
+.sk-movement-chart__y-axis {
+  display:        flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:    flex-end;
+  height:         122px;
+  padding-bottom: 2px;
+  flex-shrink:    0;
+}
+
+.sk-movement-chart__y-tick {
+  font-size:   var(--sk-font-size-xs);    /* 11px — Label */
+  font-weight: var(--sk-font-weight-medium);
+  color:       var(--sk-gray-600);
+  line-height: 1;
+}
+
+/* Área del chart */
+.sk-movement-chart__chart-area {
+  flex:    1;
+  display: flex;
+  flex-direction: column;
+  gap:     var(--sk-space-2);
+  min-width: 0;
+}
+
+/* Eje X */
+.sk-movement-chart__x-axis {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  padding:         0 2px;
+}
+
+.sk-movement-chart__x-tick {
+  font-size:   var(--sk-font-size-xs);    /* 11px — Label */
+  font-weight: var(--sk-font-weight-medium);
+  color:       var(--sk-color-text-primary);
+  line-height: 1;
+}
+
+/* Dark mode */
+.dark .sk-movement-chart {
+  border-color: var(--sk-color-border);
+}
+
+.dark .sk-movement-chart__dropdown-btn {
+  background: var(--sk-color-surface-subtle);
+  border-color: var(--sk-color-border);
+  color: var(--sk-color-text-secondary);
+}
+
+.dark .sk-movement-chart__dropdown-menu {
+  background:   var(--sk-color-surface-muted);
+  border-color: var(--sk-color-border);
+  box-shadow:   0 8px 24px rgba(0,0,0,0.4);
+}
+
+.dark .sk-movement-chart__dropdown-item:hover {
+  background: var(--sk-color-surface-subtle);
+}
+
 /* ── Button hover animations ──────────────────────────────── */
 .sk-btn {
   transition: var(--sk-btn-transition);

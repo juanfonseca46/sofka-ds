@@ -13,8 +13,9 @@ import { ProductCardPage } from "./pages/ProductCardPage";
 import { TopbarPage }      from "./pages/TopbarPage";
 import { PageHeaderPage } from "./pages/PageHeaderPage";
 import { StatCardPage }      from "./pages/StatCardPage";
-import { MovementCardPage } from "./pages/MovementCardPage";
-import { CaseStudyPage }  from "./pages/CaseStudyPage";
+import { MovementCardPage }  from "./pages/MovementCardPage";
+import { MovementChartPage } from "./pages/MovementChartPage";
+import { CaseStudyPage }     from "./pages/CaseStudyPage";
 
 type Page =
   | "overview"
@@ -27,6 +28,7 @@ type Page =
   | "page-header"
   | "stat-card"
   | "movement-card"
+  | "movement-chart"
   | "case-study";
 
 interface NavItem {
@@ -48,7 +50,8 @@ const componentItems: NavItem[] = [
   { id: "topbar",       label: "Topbar",       icon: <AlignJustify size={15} /> },
   { id: "page-header",  label: "Page Header",  icon: <Smartphone size={15} /> },
   { id: "stat-card",     label: "Stat Card",     icon: <CreditCard size={15} /> },
-  { id: "movement-card", label: "Movement Card", icon: <AlignJustify size={15} /> },
+  { id: "movement-card",  label: "Movement Card",  icon: <AlignJustify size={15} /> },
+  { id: "movement-chart", label: "Movement Chart", icon: <Palette size={15} /> },
 ];
 
 const caseItems: NavItem[] = [
@@ -189,7 +192,8 @@ export default function App() {
         {page === "product-card" && <ProductCardPage />}
         {page === "page-header"  && <PageHeaderPage />}
         {page === "stat-card"     && <StatCardPage />}
-        {page === "movement-card" && <MovementCardPage />}
+        {page === "movement-card"  && <MovementCardPage />}
+        {page === "movement-chart" && <MovementChartPage />}
         {page === "case-study"   && <CaseStudyPage />}
         {page === "topbar"       && <TopbarPage />}
       </main>
