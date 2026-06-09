@@ -15,7 +15,6 @@ import { PageHeaderPage } from "./pages/PageHeaderPage";
 import { StatCardPage }      from "./pages/StatCardPage";
 import { MovementCardPage }  from "./pages/MovementCardPage";
 import { MovementChartPage } from "./pages/MovementChartPage";
-import { CaseStudyPage }     from "./pages/CaseStudyPage";
 
 type Page =
   | "overview"
@@ -28,8 +27,7 @@ type Page =
   | "page-header"
   | "stat-card"
   | "movement-card"
-  | "movement-chart"
-  | "case-study";
+  | "movement-chart";
 
 interface NavItem {
   id: Page;
@@ -54,9 +52,6 @@ const componentItems: NavItem[] = [
   { id: "movement-chart", label: "Movement Chart", icon: <Palette size={15} /> },
 ];
 
-const caseItems: NavItem[] = [
-  { id: "case-study", label: "App Home", icon: <Smartphone size={15} /> },
-];
 
 export default function App() {
   const [page, setPage] = useState<Page>("overview");
@@ -131,22 +126,6 @@ export default function App() {
             ))}
           </div>
 
-          <div className="sidebar-group">
-            <p className="sidebar-group-label">Case Study</p>
-            {caseItems.map((item) => (
-              <button
-                key={item.id}
-                className={`sidebar-link${page === item.id ? " active" : ""}`}
-                onClick={() => setPage(item.id)}
-              >
-                {item.icon}
-                {item.label}
-                {page === item.id && (
-                  <ChevronRight size={12} style={{ marginLeft: "auto", opacity: 0.6 }} />
-                )}
-              </button>
-            ))}
-          </div>
         </nav>
 
         {/* Footer — toggle + tech stack */}
@@ -194,7 +173,6 @@ export default function App() {
         {page === "stat-card"     && <StatCardPage />}
         {page === "movement-card"  && <MovementCardPage />}
         {page === "movement-chart" && <MovementChartPage />}
-        {page === "case-study"   && <CaseStudyPage />}
         {page === "topbar"       && <TopbarPage />}
       </main>
     </div>
